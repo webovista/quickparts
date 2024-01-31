@@ -1,0 +1,43 @@
+.marquee {
+  position: relative;
+  width: 100vw;
+  max-width: 100%;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  height: 150px;
+}
+
+.aircraftTrack {
+  position: absolute;
+  white-space: nowrap;
+  display: flex;
+  flex-wrap: nowrap;
+  will-change: transform;
+  animation: marquee 12s linear infinite;
+  height: 150px;
+}
+
+.autopartsTrack {
+  position: absolute;
+  white-space: nowrap;
+  display: flex;
+  flex-wrap: nowrap;
+  will-change: transform;
+  animation: marquee 62s linear infinite;
+  height: 150px;
+}
+
+.logo {
+  width: 100px;
+  height: auto;
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}

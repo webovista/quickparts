@@ -16,50 +16,48 @@ import Sky from "./Sky";
 
 export default function Scene({ type }) {
   let modelInfo = {
-    autoparts: { src: "./automotive_dome.gltf", animation: ["truck","slo"], links: false },
-    aircraft: { src: "./aircraft_dome.gltf", animation: ["truck","slo"] },
+    homepage: {
+      src: "./finalScene.gltf",
+      animationNames: ["truck", "jet", "logo"],
+      positions: { laptop: [-0.01, 0, -0.5], phone: [0.1, 0, -8] },
+      links: true,
+    },
+    autoparts: {
+      src: "./automotive_dome.gltf",
+      animationNames: ["truck", "slo"],
+      positions: { laptop: [0.91, 0, -0.1], phone: [0.7, 0, -5] },
+      links: false,
+    },
+    aircraft: {
+      src: "./aircraft_dome.gltf",
+      animationNames: ["jet", "sl_gan"],
+      positions: { laptop: [-0.1, 0, 1], phone: [0.9, 0, -4] },
+      links: false,
+    },
   };
-  let modelsrc = modelInfo[type];
-
-  const [position, setPosition] = useState([-0.01, 0, -0.5]);
+  const modelDetails = modelInfo[type];
+  const [position, setPosition] = useState(modelDetails.positions.laptop);
   const [ismobile, setIsmobile] = useState(false);
-  const model = useGLTF(modelsrc.src);
+  const model = useGLTF(modelDetails.src);
 
   const animations = useAnimations(model.animations, model.scene);
 
   useEffect(() => {
-    // const action = animations.actions["jet"];
-    // const action2 = animations.actions["truck"];
-    // const action3 = animations.actions["logo"];
-    // // animations.actions.forEach((element) => {
-    // //   console.log(element);
-    // // });
-    // // console.log(animations.actions);
-    // console.log(type)
+    
+    const actions = modelDetails.animationNames.map(
+      (name) => animations.actions[name]
+    );
 
-    // action
-    //   .reset()
-    //   .fadeIn(0.5)
-    //   .play()
-    //   .setLoop(THREE.LoopOnce).clampWhenFinished = true;
-    // action2
-    //   .reset()
-    //   .fadeIn(0.5)
-    //   .play()
-    //   .setLoop(THREE.LoopOnce).clampWhenFinished = true;
-    // action3
-    //   .reset()
-    //   .fadeIn(0.5)
-    //   .play()
-    //   .setLoop(THREE.LoopOnce).clampWhenFinished = true;
+    actions.forEach((action) => {
+      action.reset().fadeIn(0.5).play();
+      action.setLoop(THREE.LoopOnce).clampWhenFinished = true;
+    });
 
-
-
-
-    // return () => {
-    //   action.fadeOut(0.5);
-    //   action2.fadeOut(0.5);
-    // };
+    return () => {
+      actions.forEach((action) => {
+        action.fadeOut(0.5).stop();
+      });
+    };
   }, []);
 
   useEffect(() => {
@@ -67,10 +65,10 @@ export default function Scene({ type }) {
       const screenWidth = window.innerWidth;
 
       if (screenWidth < 600) {
-        setPosition([0.1, 0, -8]);
+        setPosition(modelDetails.positions.phone);
         setIsmobile(true);
       } else {
-        setPosition([-0.01, 0, -0.5]);
+        setPosition(modelDetails.positions.laptop);
         setIsmobile(false);
       }
     }
@@ -100,8 +98,8 @@ export default function Scene({ type }) {
             position={[1.1, -0.9, -36]}
             // rotation-y={0.01}
           ></primitive>
-          {modelsrc.links ? <Aircraft ismobile={ismobile} /> : null}
-          {modelsrc.links ? <Autoparts ismobile={ismobile} /> : null}
+          {modelDetails.links ? <Aircraft ismobile={ismobile} /> : null}
+          {modelDetails.links ? <Autoparts ismobile={ismobile} /> : null}
           <Sky />
         </group>
       </PresentationControls>
@@ -110,4 +108,4 @@ export default function Scene({ type }) {
   );
 }
 
-useGLTF.preload("/finalScene.gltf");
+// useGLTF.preload("/finalScene.gltf");

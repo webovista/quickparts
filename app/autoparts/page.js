@@ -104,10 +104,8 @@ const page = () => {
     return () => ctx.revert();
   }, []);
 
-  // Play the timeline
-
   return (
-    <main ref={home} className="bg-slate-100 w-full">
+    <main ref={home} className="bg-slate-100 w-full overflow-hidden">
       <Navbar />
       <section className="h-screen pt-10">
         <Canvas>

@@ -15,13 +15,8 @@ const page = () => {
     <main className="bg-slate-100">
       <Navbar />
       <section className="h-screen pt-10">
-        <Canvas
-        // gl={{
-        //   toneMapping: THREE.ReinhardToneMapping,
-        //   toneMappingExposure: 1.5,
-        // }}
-        >
-          <Experience />
+        <Canvas >
+          <Experience type="homepage"/>
         </Canvas>
       </section>
       <section className="md:flex mb-5 flex-col items-center justify-center text-black p-10 md:p-20 md:mb-12">

@@ -8,7 +8,7 @@ import SplitType from "split-type";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Canvas } from "@react-three/fiber";
-import Experience from "@/components/ThreeJs/ThreeJs_Aircraft/Experience";
+import Experience from "@/components/ThreeJs/Experience";
 import Sky from "@/components/ThreeJs/Sky";
 
 const page = () => {
@@ -210,7 +210,7 @@ const page = () => {
       <Navbar bg={""} />
       <section className="h-screen pt-10 relative overflow-hidden">
         <Canvas>
-          <Experience />
+          <Experience type="aircraft"/>
         </Canvas>
       </section>
       <section

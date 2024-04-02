@@ -17,13 +17,13 @@ import Sky from "./Sky";
 export default function Scene({ type }) {
   let modelInfo = {
     homepage: {
-      src: "./finalScene.gltf",
+      src: "./finalScene.glb",
       animationNames: ["truck", "jet", "logo"],
       positions: { laptop: [-0.01, 0, -0.5], phone: [0.1, 0, -8] },
       links: true,
     },
     autoparts: {
-      src: "./automotive.gltf",
+      src: "./automotive.glb",
       animationNames: ["truck", "slo"],
       positions: { laptop: [0.91, 0, -0.1], phone: [0.7, 0, -5] },
       links: false,

@@ -23,13 +23,13 @@ export default function Scene({ type }) {
       links: true,
     },
     autoparts: {
-      src: "./automotive_dome.gltf",
+      src: "./automotive.gltf",
       animationNames: ["truck", "slo"],
       positions: { laptop: [0.91, 0, -0.1], phone: [0.7, 0, -5] },
       links: false,
     },
     aircraft: {
-      src: "./aircraft_dome.gltf",
+      src: "./aircraft.glb",
       animationNames: ["jet", "sl_gan"],
       positions: { laptop: [-0.1, 0, 1], phone: [0.9, 0, -4] },
       links: false,
@@ -43,7 +43,6 @@ export default function Scene({ type }) {
   const animations = useAnimations(model.animations, model.scene);
 
   useEffect(() => {
-    
     const actions = modelDetails.animationNames.map(
       (name) => animations.actions[name]
     );

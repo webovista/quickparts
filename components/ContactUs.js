@@ -11,16 +11,21 @@ const ContactUs = () => {
       >
         <div className="md:w-1/2">
           <h5 className="text-3xl font-semibold mb-2 md:text-3xl lg:text-4xl text-white">
-            Give QuickParts GMBH a Try?
+            Speak with our Experts
           </h5>
           <p className="font-medium text-white">
-            If you are interested in our products and would like to speak with
-            our sales team, please contact:
+            Our team is here to answer your questions and guide you through the
+            process of finding the perfect spare parts.
           </p>
-          <h5 className="mt-7 text-sm font-light text-white">Support Center 24/7</h5>
-          <h5 className="text-lg font-medium text-white">+ 49 179 2772530</h5>
-          <h5 className="mt-5 text-sm font-light text-white">Address</h5>
-          <address className="text-white">Quick Parts GmbH <br/> Europaalle 33 <br /> 67657 Kaiserslautern</address>
+          <h5 className="mt-7 text-sm font-light text-white">
+          24/7 Customer Support
+
+          </h5>
+          <h5 className="text-lg font-medium text-white">+49 179 2772530</h5>
+          <h5 className="mt-5 text-sm font-light text-white">Visit Us:</h5>
+          <address className="text-white">
+            Quick Parts GmbH <br /> Europaalle 33 <br /> 67657 Kaiserslautern
+          </address>
         </div>
         <div className="md:w-1/2">
           <form className="p-3">

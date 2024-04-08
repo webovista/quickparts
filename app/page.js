@@ -15,18 +15,21 @@ const page = () => {
     <main className="bg-slate-100">
       <Navbar />
       <section className="h-screen pt-10">
-        <Canvas >
-          <Experience type="homepage"/>
+        <Canvas>
+          <Experience type="homepage" />
         </Canvas>
       </section>
       <section className="md:flex mb-5 flex-col items-center justify-center text-black p-10 md:p-20 md:mb-12">
-        <h1 className="text-3xl font-medium">Super Fast</h1>
+        <h1 className="text-4xl font-medium">Effortless Parts</h1>
         <h1 className="text-5xl md:text-6xl font-semibold">
-          Spare Part Delivery
+          Trusted Partner, Smooth Operations
         </h1>
-        <h6 className="mt-6 w-3/4 text-lg font-light md:text-center">
-          Curabitur arcuerat accumsan iderdiet porttitor at sem Proin eget
-          tortor risus uisque. Curabitur arcuerat accumsan iderdiet porttitor.
+        <h6 className="mt-6 w-3/4 text-md font-light md:text-center">
+          At QuickParts GMBH, we envision a future where industrial businesses
+          have effortless access to the spare parts they need, regardless of
+          industry or complexity. We strive to be more than just a supplier; we
+          aim to be a trusted partner, ensuring your operations run smoothly and
+          efficiently.
         </h6>
       </section>
       <ContactUs />

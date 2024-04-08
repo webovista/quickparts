@@ -109,12 +109,12 @@ const page = () => {
       <Navbar />
       <section className="h-screen pt-10">
         <Canvas>
-          <Experience type="autoparts"/>
+          <Experience type="autoparts" />
         </Canvas>
       </section>
       <section className="p-2.5 md:p-4 bg-slate-100">
         <div
-          className="mx-auto p-8 md:p-14 md:pb-36 w-full bg-no-repeat bg-cover bg-center rounded-b-2xl bg-stone-900"
+          className="mx-auto p-8 md:p-12 md:pb-16 w-full bg-no-repeat bg-cover bg-center rounded-b-2xl bg-stone-900"
           style={{
             backgroundImage: `url('/images/autoparts/BgSecond.png')`,
           }}
@@ -123,14 +123,19 @@ const page = () => {
             type="submit"
             className="flex m-auto my-4 items-center justify-center rounded-md border border-transparent bg-red-700 px-6 py-1 text-base font-medium text-white hover:bg-red-800 focus:outline-none focus:ring-2 focus:ring-red-500"
           >
-            Quality Aircraft Spare Parts, Ready for Takeoff! ✨
+            Keeping Your Fleet on the Road! ✨
           </button>
           <h3
             ref={tmpText}
-            className="m-auto p-3 text-center md:w-10/12 text-2xl md:text-4xl font-semibold text-white"
+            className="mx-auto p-3 text-center md:w-10/12 text-2xl md:text-2xl font-semibold text-white"
           >
-            Explore our comprehensive selection of top-tier aircraft spare
-            parts, meticulously crafted and tested for optimal performance.{" "}
+            At QuickParts GMBH, we understand the importance of keeping your
+            automotive fleet running smoothly. Whether you manage a large
+            transportation company or a local repair shop, downtime can be
+            costly. We offer a comprehensive suite of services designed to
+            streamline your automotive spare parts procurement process, ensuring
+            you have the right parts at the right time to keep your vehicles on
+            the road.
           </h3>
         </div>
       </section>
@@ -148,32 +153,35 @@ const page = () => {
               />
             </div>
             <div ref={section3_r}>
-              <div className="md:w-1/2 ml-auto py-5 md:py-10 mb-3 pl-5">
-                <h3 className="text-4xl mb-3 font-bold">
-                  Unparalleled Quality:
-                </h3>
+              <div className="md:w-1/2 ml-auto py-5 md:py-4 pl-5">
+                <h3 className="text-4xl font-bold">Extensive Inventory:</h3>
                 <p>
-                  Our premium and rigorously tested aircraft spare parts ensure
-                  unparalleled quality and reliability.
+                  We maintain a vast catalog of automotive spare parts for
+                  various makes and models, ensuring you have ready access to
+                  the components you need.
                 </p>
               </div>
-              <div className="md:w-1/2 ml-auto py-5 md:py-10 mb-3 pl-5">
-                <h3 className="text-4xl mb-3 font-bold">
-                  Global Reach, Local Service:
-                </h3>
+              <div className="md:w-1/2 ml-auto py-5 md:py-4 pl-5 ">
+                <h3 className="text-4xl font-bold">Competitive Pricing:</h3>
                 <p>
-                  Benefit from our extensive network and global reach, paired
-                  with personalized, local service for a seamless experience.
+                  We offer competitive pricing on a wide range of automotive
+                  parts, helping you optimize your budget.
                 </p>
               </div>
-              <div className="md:w-1/2 ml-auto py-5 md:py-10 pl-5 ">
+              <div className="md:w-1/2 ml-auto py-5 md:py-4 pl-5 ">
+                <h3 className="text-4xl font-bold"> Quality Assurance:</h3>
+                <p>
+                  We source parts from reputable manufacturers and conduct
+                  quality checks to ensure optimal performance and reliability.
+                </p>
+              </div>
+              <div className="md:w-1/2 ml-auto py-5 md:py-4 pl-5 ">
                 <h3 className="text-4xl font-bold">
-                  Customer-Centric Excellence:
+                  Fast and Reliable Delivery:
                 </h3>
                 <p>
-                  Experience exceptional customer support and efficient order
-                  processing, making us your trusted partner for all aviation
-                  spare parts needs.
+                  We offer fast and reliable delivery options to minimize
+                  downtime for your fleet.
                 </p>
               </div>
             </div>

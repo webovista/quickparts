@@ -7,6 +7,98 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import React, { useEffect, useRef } from "react";
 
+const listsData = [
+  {
+    heading: "Our Journey of Growth:",
+    list: [
+      {
+        title: "2016",
+        content:
+          "We began by providing spare parts solutions for the automotive industry.",
+      },
+      {
+        title: "2021",
+        content:
+          "Our expertise expanded to encompass the oil and gas industry.",
+      },
+      {
+        title: "2022",
+        content:
+          "We took flight, adding aircraft spare parts to our comprehensive portfolio.",
+      },
+      {
+        title: "2023",
+        content:
+          "QuickParts GMBH continues to innovate, launching WeboVista, a dedicated branch focused on the tech sector.",
+      },
+    ],
+  },
+  {
+    heading: "A Global Reach with Local Expertise:",
+    subHeading:
+      "Headquartered in Kaiserslautern, Germany, we are a company with a global mindset. We work with clients across the world, including:",
+    list: [
+      {
+        title: "North America:",
+        content: " Partnering with businesses in the USA and beyond.",
+      },
+      {
+        title: "North Africa:",
+        content:
+          " Extending our reach to meet the needs of North African industries.",
+      },
+      {
+        title: "China:",
+        content:
+          " Collaborating with Chinese companies to ensure efficient parts sourcing.",
+      },
+    ],
+  },
+  {
+    heading: "Unwavering Commitment to Excellence:",
+    subHeading:
+      "Throughout this journey, our commitment to excellence has remained constant. We are driven by:",
+    list: [
+      {
+        title: "Unmatched Expertise:",
+        content:
+          "  Our team stays current on industry trends and part specifications to provide unparalleled sourcing knowledge.",
+      },
+      {
+        title: "treamlined Solutions:",
+        content:
+          "We navigate the complexities of parts procurement across various sectors, allowing you to focus on your core business..",
+      },
+      {
+        title: "Exceptional Customer Service: ",
+        content:
+          "Building strong relationships and providing responsive support throughout the entire process is a priority for us.",
+      },
+    ],
+  },
+  {
+    heading:
+      "Choose QuickParts GMBH as your partner and experience the difference of::",
+    list: [
+      {
+        title: "Effortless Parts Procurement:",
+        content:
+          "Access a vast network of suppliers and a team dedicated to finding the right parts for your needs.",
+      },
+      {
+        title: "Exceptional Service:",
+        content:
+          "Benefit from responsive communication, expert advice, and efficient order fulfillment.",
+      },
+      {
+        title: "Industry-Specific Knowledge: ",
+        content:
+          "Whether you're in automotive, marine (including oil & gas), aviation, or tech (through WeboVista), we understand your unique requirements.",
+      },
+    ],
+  },
+];
+
 const page = () => {
   // Register the ScrollTrigger plugin
   gsap.registerPlugin(ScrollTrigger);
@@ -94,68 +186,52 @@ const page = () => {
           ref={section1}
           className="flex flex-col items-center justify-center"
         >
-          <h1 className="text-4xl md:text-7xl my-5 mt-12 text-white">About us</h1>
+          <h1 className="text-4xl md:text-7xl my-5 mt-12 text-white">
+            About us
+          </h1>
           <p className="text-xl px-4  mt-4 text-center md:w-3/4 font-thin text-white">
-            Welcome to QuickParts GMBH, your premier destination to purchase
-            high-quality spare parts for Automotive, Aircraft, Marine, and Oil &
-            Gas Industry. As a leading supplier in the aviation, automobile and
-            other heavy industries, we take pride in delivering top-notch
-            products and services to meet the diverse needs of our esteemed
-            clients.
+            QuickParts GMBH is your trusted B2B partner for sourcing all
+            industrial spare parts. We specialize in aviation, marine (including
+            oil & gas), and automotive industries, tackling even the most
+            challenging procurement needs. Our overhaul services ensure peak
+            performance for your airplane parts.
           </p>
         </div>
       </section>
 
       <section ref={section2} className="p-8 bg-slate-100 text-black">
-        <h1 className="text-4xl md:text-5xl my-5 mt-4 md:mt-2">
-          About us Heading
+        <h1 className="text-4xl md:text-5xl my-2 mt-4 md:mt-2">
+          Your Trusted Partner for Industrial Spare Parts <br />{" "}
+          <small>(Since 2016)</small>
         </h1>
-        <div className="md:flex">
-          <p className="text-lg mt-4 md:w-3/4 font-light md:mt-2 md:me-8">
-            Our Commitment to Excellence: At QuickParts GMBH, we are more than
-            just a supplier of spare parts; we are your partners in precision
-            and reliability. For years, we have been the go-to destination for
-            businesses in the Automotive, Aircraft, Marine, and Oil & Gas
-            industries, offering a comprehensive range of high-quality spare
-            parts. Our commitment to excellence, unwavering dedication to
-            quality, and a passion for innovation have established us as the
-            trusted supplier in these industries.
-            <br />
-            <br /> Quality Assurance: We adhere to the highest industry
-            standards when it comes to the sourcing and distribution of spare
-            parts for automotive, aircraft, marine, and other industries. Our
-            products undergo rigorous quality control measures, and we
-            collaborate with reputable manufacturers to guarantee the
-            authenticity and reliability of every component. Rest assured, when
-            you choose QuickParts GMBH, you are choosing uncompromising quality.
-            <br />
-            <br /> Wide Range of Products: Whether you are in need of gear
-            components, engines, or any other spare parts, we have you covered.
-            Our extensive inventory boasts a diverse selection of products,
-            catering to various motor and machine models and specifications.
-            Browse through our catalog to find the perfect fit for your aviation
+        <div className="md:flex flex-wrap justify-between">
+          {listsData.map((data, index) => (
+            <div key={index} className="md:w-[48%]">
+              <h2 className="text-2xl font-bold mt-4">{data.heading}</h2>
+              {data.subHeading && (
+                <h2 className="text-lg font-medium mb-2">{data.subHeading}</h2>
+              )}
+              <ul className="list-disc ml-4 space-y-2 text-base">
+                {data.list.map((item, index) => (
+                  <li key={index}>
+                    <b>{item.title}</b> {item.content}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+        <div className="md:w-3/4 mt-8 font-semibold">
+          <h2 className="text-lg md:text-3xl">
+            Partner with QuickParts GMBH and experience a new level of
+            efficiency and peace of mind in managing your industrial spare parts
             needs.
-          </p>
-          <p className="text-lg mt-4 md:w-3/4 font-light md:ms-8">
-            Customer-Centric Approach: At the heart of our business is a
-            customer-centric philosophy. We prioritize your satisfaction by
-            offering personalized service, efficient order processing, and
-            timely deliveries. Our team of experts is dedicated to assisting you
-            in finding the right solutions for your specific requirements,
-            ensuring a seamless and hassle-free experience.
-            <br />
-            <br /> Global Reach: With a strong network of suppliers and partners
-            worldwide, we have the capability to serve clients on a global
-            scale. Whether you operate regionally or internationally, QuickParts
-            GMBH is your trusted partner for all your spare parts needs.
-            <br />
-            <br /> Environmental Responsibility: We are committed to
-            sustainability and environmental responsibility. Our sourcing
-            practices and business operations align with industry best practices
-            to minimize our ecological footprint. By choosing QuickParts GMBH,
-            you contribute to a greener and more sustainable automotive, marine,
-            aviation, and oil & gas industry.
-          </p>
+          </h2>
+          <h3 className=' md:text-xl mt-4'>
+            Contact us today! <br />
+            Phone: + 49 179 2772530 (24/7 Support)
+          </h3>
+          <h3 className='text-md mt-4'>We look forward to exceeding your expectations!</h3> 
         </div>
         <div ref={section3} className="mt-12">
           <img
